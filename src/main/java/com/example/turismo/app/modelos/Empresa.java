@@ -2,13 +2,14 @@ package com.example.turismo.app.modelos;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name="empresas")
+
+@Entity //con esta anotacion convertimos esta clase en una tabla en bd
+@Table(name="empresas") //con esta anotacion le asiganmos un nombre a esa tabla en sql
 public class Empresa {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //con esto asignamos el atributo como primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //con esta asignamos una clave como auto incrementable
     private Integer id;
-    @Column(name="nombre",nullable = false)
+    @Column(name="nombre",nullable = false) //con esta anotacion le asignamos el nombre a la columna y decimos si son campos que se pueden tener nullos o no y la cantidad de caracteres por ej varchar(30,null)
     private String nombre;
     private String nit;
     private Integer ubicacion;
