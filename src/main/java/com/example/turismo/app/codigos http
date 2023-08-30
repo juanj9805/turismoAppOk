@@ -1,0 +1,26 @@
+2xx
+TODO OK
+es un estandar para decir que una peticion se atendio y se resolvio con exito
+back y front se entienden por medio de estos errores
+
+3xx
+ERRORES RED
+estos incluyen un tema de infraestructura, de red temas asociados a la red "redirecciones" sobrecarga en la pagina principal y mando usuarios a otro lado
+
+4xx
+ERRORES FRONT END (errores del usuario)
+aca es cuando el cliente comete un error, pregunta por un servivio que no existe, por eso el not found
+401 errores de autorizacion
+
+5xx
+ERRORES DEL BACKEND (INTERNAL SERVER ERROR)
+sobrecarga de un servidor
+cuando se recibe ataques ciberneticos
+cuando algo en el back queod mal
+se suele apagar el server
+
+TAREAS
+INVESTIGAR PROTOCOLO HTTP
+
+ADENTRO BODY DATA DATOS BODY -------------------------------- MAS SEGUROS
+AFUERA CABECERA CABECERA

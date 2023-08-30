@@ -6,10 +6,12 @@ import com.example.turismo.app.repositorio.EmpresaRepositorio;
 import com.example.turismo.app.repositorio.OfertaRepositorio;
 import com.example.turismo.app.validaciones.OfertaValidacion;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class OfertaServicio {
 
     @Autowired //inyectando una dependencia aca le digo a una clase que puede usar el objeto de otra (desde una clase uso a otra)

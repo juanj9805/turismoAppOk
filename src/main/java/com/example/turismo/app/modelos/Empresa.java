@@ -1,5 +1,5 @@
 package com.example.turismo.app.modelos;
-
+//ENTIDADES/MODELOS/DATOS/TABLAS
 import jakarta.persistence.*;
 
 
