@@ -15,7 +15,7 @@ public class Oferta {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private Double costoPersona;
-    private Integer idLocal;
+   // private Integer idLocal;
 
 
     public Oferta() {
@@ -28,7 +28,7 @@ public class Oferta {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.costoPersona = costoPersona;
-        this.idLocal = idLocal;
+        //this.idLocal = idLocal;
     }
 
     public Integer getId() {
@@ -79,12 +79,12 @@ public class Oferta {
         this.costoPersona = costoPersona;
     }
 
-    public Integer getIdLocal() {
-        return idLocal;
-    }
+   // public Integer getIdLocal() {
+        //return idLocal;
+    //}
 
-    public void setIdLocal(Integer idLocal) {
-        this.idLocal = idLocal;
-    }
+   // public void setIdLocal(Integer idLocal) {
+     //   this.idLocal = idLocal;
+   // }
 }
 

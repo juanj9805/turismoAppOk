@@ -1,8 +1,6 @@
 package com.example.turismo.app.servicio;
 
-import com.example.turismo.app.modelos.Empresa;
 import com.example.turismo.app.modelos.Oferta;
-import com.example.turismo.app.repositorio.EmpresaRepositorio;
 import com.example.turismo.app.repositorio.OfertaRepositorio;
 import com.example.turismo.app.validaciones.OfertaValidacion;
 import org.springframework.beans.factory.annotation.Autowired;

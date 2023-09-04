@@ -3,6 +3,7 @@ package com.example.turismo.app.controlador;
 import com.example.turismo.app.modelos.Empresa;
 import com.example.turismo.app.servicio.EmpresaServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,32 +23,79 @@ public class EmpresaControlador {
     @PostMapping //CON ESTA ANOTACION DECIMOS QUE VAMOS A RECIBIR UNA PETICION DE TIPO POST
     public ResponseEntity<?> registrarEmpresa(@RequestBody Empresa datosEmpresa){//REQUESTBODY CON ESTA ANOTACION (INFO ADENTRO DATA AFUERA)
         //<?> PARAMETROS con ? decimos que aca te puede devolver cualquier cosa(mala practica)
-        return null;
+        try{
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(this.empresaServicio.registrarEmpresa(datosEmpresa));
+
+        }catch(Exception error){
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(error.getMessage());
+
+        }
+
     }
 
-    @PutMapping
+    @PutMapping("{idEmpresa}") //cuando algo se manda en el header se le abre parentesis y se pone esa variable (pathvariable)
      public ResponseEntity<?> editarEmpresa(@RequestBody Empresa datosNUevosEmpresa, @PathVariable Integer idEmpresa ){//EN LOS () VA LA INFORMACION QUE NOS MANDA EL CLIENTE
         //PATH ES RUTA -------------
-        return null;
+        try{
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(this.empresaServicio.modificarEmpresa(idEmpresa,datosNUevosEmpresa));
+
+        }catch(Exception error){
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(error.getMessage());
+
+        }
      }
 
-     @GetMapping
+     @GetMapping("{idEmpresa}")
      public ResponseEntity<?> buscarEmpresa(@PathVariable Integer idEmpresa){
-        return null;
-     }
+         try{
+             return ResponseEntity
+                     .status(HttpStatus.OK)
+                     .body(this.empresaServicio.consultarEmpresaId(idEmpresa));
+
+         }catch(Exception error){
+             return ResponseEntity
+                     .status(HttpStatus.BAD_REQUEST)
+                     .body(error.getMessage());
+
+         }     }
 
      @GetMapping
      public ResponseEntity<?> buscarTodasEmpresa(){
-        return null;
+         try{
+             return ResponseEntity
+                     .status(HttpStatus.OK)
+                     .body(this.empresaServicio.consultarEmpresaTodas());
+
+         }catch(Exception error){
+             return ResponseEntity
+                     .status(HttpStatus.BAD_REQUEST)
+                     .body(error.getMessage());
+
+         }
      }
 
-     @DeleteMapping
+     @DeleteMapping ("{idEmpresa}")
      public ResponseEntity<?> eliminarEmpresa(@PathVariable Integer idEmpresa){
-        return null;
+         try{
+             return ResponseEntity
+                     .status(HttpStatus.OK)
+                     .body(this.empresaServicio.EliminarEmpresa(idEmpresa));
+
+         }catch(Exception error){
+             return ResponseEntity
+                     .status(HttpStatus.BAD_REQUEST)
+                     .body(error.getMessage());
+
+         }
      }
-
-
-
 
 
 }
